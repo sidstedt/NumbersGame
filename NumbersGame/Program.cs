@@ -25,8 +25,6 @@
             int randomNum;
             int choice;
             int topNum;
-            /*-------------- OLD CODE --------------*/
-            // Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök.");
             Console.WriteLine("__     ___   _ _ _                                        " +
                 "\r\n\\ \\   / (_)_(_) | | _____  _ __ ___  _ __ ___   ___ _ __  " +
                 "\r\n \\ \\ / / / _` | | |/ / _ \\| '_ ` _ \\| '_ ` _ \\ / _ \\ '_ \\ " +
@@ -68,33 +66,6 @@
             // and return the value
             return Game(randomNum, topNum);
         }
-
-        /*-------------- OLD CODE --------------*/
-        //while (triesLeft > 0)
-        //{
-        //    if (Int32.TryParse(Console.ReadLine(), out guessNum))
-        //    {
-        //        bool rightGuess = CheckGuess(guessNum, randomNum);
-
-        //        if (rightGuess)
-        //        {
-        //            break;
-        //        }
-        //        else
-        //        {
-        //            triesLeft--;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Du måste gissa på ett nummer");
-        //    }
-        //    if (triesLeft == 0)
-        //    {
-        //        Console.WriteLine("Tyvärr du lyckades inte gissa talet på fem försök!");
-        //    }
-        //}
-
         // Game method
         static bool Game(int randomNum, int topNum)
         {
@@ -223,32 +194,7 @@
             // the % value which gives us an idea how close the user is.
             double result = compared / maxValue;
 
-            /*-------------- OLD CODE --------------*/
-            // if less or up to 10% close
-            //if (result <= 0.1)
-            //{
-            //    return "\tNu bränns det!";
-            //}
-            //// if between 10,1% to 20%
-            //else if (result >= 0.101 && result <= 0.2)
-            //{
-            //    return "\tNu är du nära!";
-            //}
-            //// if between 20,1% up to 50%
-            //else if (result > 0.201 && result <= 0.5)
-            //{
-            //    return "\tDu går åt rätt håll!";
-            //}
-            //// If above 50% tell the user to go the other way
-            //else
-            //{
-            //    return "\tGå åt andra hållet...";
-            //}
-
-
-            // switched out the if statements to a switch
-            // As we learned this in class i wanted to implement it.
-            // And as a result it was more neat to have it like this.
+            // switch to handle the calculated margin
             switch (result)
             {
                 case <= 0.1:
