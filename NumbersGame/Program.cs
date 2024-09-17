@@ -11,7 +11,7 @@
             // While bool is true keep playing
             while (playing)
             {
-                // 
+                // Call method StartGame and save return value
                 playing = StartGame();
             }
             Console.ReadKey();
@@ -25,6 +25,7 @@
             int randomNum;
             int choice;
             int topNum;
+            /*-------------- OLD CODE --------------*/
             // Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök.");
             Console.WriteLine("__     ___   _ _ _                                        " +
                 "\r\n\\ \\   / (_)_(_) | | _____  _ __ ___  _ __ ___   ___ _ __  " +
@@ -63,9 +64,12 @@
                     Console.WriteLine("Ogiltligt val!");
                     return true;
             }
-            // returns and call the Game method and pass along the values
+            // Call method Game and pass along values
+            // and return the value
             return Game(randomNum, topNum);
         }
+
+        /*-------------- OLD CODE --------------*/
         //while (triesLeft > 0)
         //{
         //    if (Int32.TryParse(Console.ReadLine(), out guessNum))
@@ -218,6 +222,8 @@
             // Meaning we will get a 0.** value that corresponds to
             // the % value which gives us an idea how close the user is.
             double result = compared / maxValue;
+
+            /*-------------- OLD CODE --------------*/
             // if less or up to 10% close
             //if (result <= 0.1)
             //{
@@ -239,6 +245,7 @@
             //    return "\tGå åt andra hållet...";
             //}
 
+
             // switched out the if statements to a switch
             // As we learned this in class i wanted to implement it.
             // And as a result it was more neat to have it like this.
@@ -252,6 +259,8 @@
                     return "\tDu går åt rätt håll!";
                 default:
                     return "\tGå åt andra hållet...";
+                // As a note, could implement better
+                // margin for the cases for better hints
             }
         }
     }
